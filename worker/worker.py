@@ -17,7 +17,7 @@ from gcloud import storage, pubsub
 import sys
 
 
-PROJECT_ID = 'your-project-id'
+PROJECT_ID = 'scalable-transcoding'
 TOPIC = 'projects/{}/topics/message'.format(PROJECT_ID)
 
 
@@ -40,6 +40,7 @@ def transcode():
 if __name__ == '__main__':
     pubsub_client = pubsub.Client(PROJECT_ID)
     topic = pubsub_client.topic("message")
+    print(topic)
     if not topic.exists():
         topic.create()
     sub = pubsub.Subscription("mysub", topic=topic)

@@ -17,7 +17,7 @@
 import time
 import requests
 
-PROJECT_ID = 'your-project-id'
+PROJECT_ID = 'scalable-transcoding'
 URL = 'https://{}.appspot.com/transcode'.format(PROJECT_ID)
 NUM_REQUESTS = 100
 DELAY=.1

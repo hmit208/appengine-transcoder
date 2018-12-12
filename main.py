@@ -20,7 +20,7 @@ import random
 import logging
 from gcloud import storage, pubsub
 
-PROJECT_ID = 'your-project-id'
+PROJECT_ID = 'scalable-transcoding'
 
 TOPIC = 'projects/{}/topics/message'.format(PROJECT_ID)
 
@@ -33,7 +33,7 @@ app.debug = True
 def transcode():
     pubsub_client = pubsub.Client(PROJECT_ID)
     topic = pubsub_client.topic("message")
-    topic.publish(b"message")
+    topic.publish(b"this is a   message")
     return "Done"
 
 
